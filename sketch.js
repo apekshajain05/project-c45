@@ -5,7 +5,7 @@ var ToDo;
 
 
 function setup() {
-  createCanvas(20,20);
+  createCanvas(windowWidth,windowHeight);
   database=firebase.database(); 
   title=createElement("h1");
   title.html("TO DO LIST");
@@ -15,11 +15,13 @@ function setup() {
    button=createButton("Add Task");
    button.position(650,150);
    button.mousePressed(submitData);
+  
 }
 
 function draw() {
   background(255,255,255);  
- 
+  
+
 }
 
 function submitData(){
@@ -29,4 +31,5 @@ function submitData(){
   var db=database.ref("ToDo");
   db.push(data);
   //console.log(data);
+  text("Added",200,200);
 }

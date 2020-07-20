@@ -25,11 +25,14 @@ function draw() {
 }
 
 function submitData(){
+  textSize(30);
+  text("Added",400,200);
   var data={
     taskName: input.value()
   }
   var db=database.ref("ToDo");
   db.push(data);
   //console.log(data);
-  text("Added",200,200);
+  
+ 
 }
